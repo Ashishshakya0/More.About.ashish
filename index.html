@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <meta name="description" content="ASHISH - Student portfolio with neon Android style, 10th marksheet, skills & social links">
+  <meta name="description" content="Ashish Shakya - Student portfolio with neon Android style">
   <meta name="theme-color" content="#06121f">
-  <title>ASHISH · neon portfolio</title>
-  <!-- Google Fonts & Font Awesome (inline CDN) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
+  <title>Ashish Shakya · neon portfolio</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Great+Vibes&family=Dancing+Script:wght@700&family=Pacifico&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -38,7 +38,6 @@
       opacity: 0.9;
     }
 
-    /* main content layer */
     .wrapper {
       position: relative;
       z-index: 5;
@@ -73,7 +72,6 @@
       100% { text-shadow: 0 0 25px #4df0ff, 0 0 70px #0077ff; opacity: 1; }
     }
 
-    /* ----- cards & common elements ----- */
     .glass-card {
       background: #0d1b2a;
       border-radius: 18px;
@@ -107,26 +105,39 @@
       align-items: center;
       text-align: center;
     }
+    
+    /* ===== DP BADI KARDI (120px → 150px) ===== */
     .avatar {
-      width: 120px;
-      height: 120px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #00bfff;
-      box-shadow: 0 0 30px #00bfff, 0 0 15px #1e90ff inset;
-      margin-bottom: 1rem;
+      border: 5px solid #00bfff;
+      box-shadow: 0 0 40px #00bfff, 0 0 20px #1e90ff inset;
+      margin-bottom: 1.2rem;
       animation: float 4s infinite ease-in-out;
     }
     @keyframes float {
       0% { transform: translateY(0); }
       50% { transform: translateY(-7px); }
     }
+    
+    /* ===== ASHISH SHAKYA - टेढ़ा और स्टाइलिश फ़ॉन्ट ===== */
     .name {
-      font-size: 2.6rem;
-      font-weight: 600;
-      line-height: 1.2;
-      text-shadow: 0 0 20px cyan;
+      font-size: 3.2rem;
+      font-weight: 700;
+      font-family: 'Dancing Script', 'Great Vibes', cursive;
+      line-height: 1.1;
+      text-shadow: 0 0 30px cyan, 0 0 60px #00bfff;
+      margin: 5px 0;
+      background: linear-gradient(135deg, #fff, #aaf0ff, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transform: rotate(-1deg);  /* थोड़ा टेढ़ा */
+      letter-spacing: 1px;
     }
+    
     .tagline {
       color: #b0e0ff;
       font-size: 1.2rem;
@@ -135,6 +146,75 @@
       border-radius: 40px;
       display: inline-block;
       box-shadow: 0 0 12px #00bfff;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+    }
+
+    /* instagram style bio */
+    .instagram-bio {
+      background: #0d1b2a;
+      border-radius: 18px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid #00bfff;
+      box-shadow: 0 0 20px #00bfff40;
+    }
+    .bio-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 12px 0;
+      font-size: 1.2rem;
+      padding: 5px 0;
+      border-bottom: 1px dashed #00bfff30;
+    }
+    .bio-item i {
+      width: 30px;
+      color: #00bfff;
+      text-shadow: 0 0 10px #00bfff;
+    }
+    .bio-quote {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #aaf0ff;
+      text-align: center;
+      background: #00bfff10;
+      padding: 12px;
+      border-radius: 50px;
+      border: 1px solid #00bfff;
+    }
+
+    /* hobby chips */
+    .hobby-chip {
+      display: inline-block;
+      background: #00bfff20;
+      padding: 8px 18px;
+      margin: 5px;
+      border-radius: 30px;
+      border: 1px solid #00bfff;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+    .hobby-chip:hover {
+      background: #00bfff40;
+      box-shadow: 0 0 15px #00bfff;
+      transform: scale(1.05);
+    }
+
+    /* ===== ABOUT SECTION - अच्छा फ़ॉन्ट ===== */
+    .about-text {
+      font-size: 1.25rem;
+      font-family: 'Playfair Display', 'Inter', serif;
+      font-style: italic;
+      line-height: 1.7;
+      color: #e0f0ff;
+      text-shadow: 0 0 5px rgba(0,191,255,0.3);
+    }
+    
+    .about-text i {
+      color: #00bfff;
+      margin-right: 5px;
     }
 
     /* table – 10th marksheet */
@@ -154,9 +234,6 @@
     .marks-table td {
       padding: 10px 6px;
       border-bottom: 1px solid #1e3f5a;
-    }
-    .marks-table tr {
-      transition: 0.15s;
     }
     .marks-table tr:hover {
       background: #1a3349;
@@ -250,7 +327,6 @@
       box-shadow: 0 0 30px #00bfff, 0 0 5px white;
       transform: scale(1.02);
     }
-    /* ripple effect (js adds span) */
     .ripple-effect {
       position: absolute;
       border-radius: 50%;
@@ -336,9 +412,11 @@
     @media (max-width: 480px) {
       .wrapper { padding: 10px; }
       h2 { font-size: 1.6rem; }
-      .name { font-size: 2rem; }
-      .avatar { width: 100px; height: 100px; }
+      .name { font-size: 2.5rem; }
+      .avatar { width: 130px; height: 130px; }
       .social-btn { font-size: 1.2rem; padding: 0.7rem 0.8rem; }
+      .bio-item { font-size: 1rem; }
+      .about-text { font-size: 1.1rem; }
     }
   </style>
 </head>
@@ -353,15 +431,72 @@
   <div class="wrapper">
     <!-- profile header -->
     <section class="glass-card profile fade-section">
-      <img src="https://i.ibb.co/HT13p0xj/IMG-20240922-124317-779.jpg" alt="ASHISH dp" class="avatar" onerror="this.src='https://via.placeholder.com/120/0d1b2a/00bfff?text=ASH'">
-      <div class="name">ASHISH</div>
+      <img src="https://i.ibb.co/HT13p0xj/IMG-20240922-124317-779.jpg" alt="Ashish Shakya dp" class="avatar" onerror="this.src='https://via.placeholder.com/150/0d1b2a/00bfff?text=AS'">
+      <div class="name">Ashish Shakya</div>
       <div class="tagline">Student | Editor | Beginner Coder</div>
     </section>
 
-    <!-- about me -->
+    <!-- Instagram Style Bio Section -->
+    <section class="instagram-bio fade-section">
+      <h2 style="border-left-color: #ff69b4;">👤 Bio</h2>
+      <div class="bio-item">
+        <i class="fas fa-heart" style="color: #ff4d4d;"></i>
+        <span><strong>Name:</strong> Ashish Shakya 🖤</span>
+      </div>
+      <div class="bio-item">
+        <i class="fas fa-birthday-cake" style="color: #ffb347;"></i>
+        <span><strong>Birthday:</strong> 6 May 2008 🎂</span>
+      </div>
+      <div class="bio-item">
+        <i class="fas fa-graduation-cap" style="color: #00bfff;"></i>
+        <span><strong>Life:</strong> Student Life 🎓</span>
+      </div>
+      <div class="bio-item">
+        <i class="fas fa-laptop-code" style="color: #32ff7e;"></i>
+        <span><strong>Learning:</strong> Coding 💻</span>
+      </div>
+      <div class="bio-item">
+        <i class="fas fa-video" style="color: #ff69b4;"></i>
+        <span><strong>Creative:</strong> Editor 🎬</span>
+      </div>
+      <div class="bio-item">
+        <i class="fas fa-heart-broken" style="color: #ff4d4d;"></i>
+        <span><strong>Status:</strong> Currently Single 🙂</span>
+      </div>
+      <div class="bio-item">
+        <i class="fas fa-rocket" style="color: #ffb347;"></i>
+        <span><strong>Goal:</strong> Building My Future 🚀</span>
+      </div>
+      <div class="bio-quote">
+        <i class="fas fa-quote-left"></i> Hustle in Silence, Let Success Make Noise <i class="fas fa-quote-right"></i>
+      </div>
+    </section>
+
+    <!-- Hobbies Section -->
     <section class="glass-card fade-section">
-      <h2>📘 about</h2>
-      <p style="font-size: 1.2rem;">High school passed in 2024 · 12th result pending.<br>✂️ Basic CapCut editing · HTML, CSS, JS basics.<br>⚡ Interested in tech & digital skills. Always learning.</p>
+      <h2>🎯 hobbies & interests</h2>
+      <div>
+        <span class="hobby-chip"><i class="fas fa-cut"></i> Video Editing</span>
+        <span class="hobby-chip"><i class="fas fa-camera"></i> Photography</span>
+        <span class="hobby-chip"><i class="fas fa-music"></i> Music</span>
+        <span class="hobby-chip"><i class="fas fa-gamepad"></i> Gaming</span>
+        <span class="hobby-chip"><i class="fas fa-code"></i> Coding</span>
+        <span class="hobby-chip"><i class="fas fa-book"></i> Reading</span>
+        <span class="hobby-chip"><i class="fas fa-dumbbell"></i> Gym</span>
+        <span class="hobby-chip"><i class="fas fa-motorcycle"></i> Travelling</span>
+      </div>
+    </section>
+
+    <!-- about me - अच्छे फ़ॉन्ट में -->
+    <section class="glass-card fade-section">
+      <h2>📘 about me</h2>
+      <div class="about-text">
+        <p><i class="fas fa-graduation-cap"></i> High school passed in 2024 · 12th result pending.</p>
+        <p><i class="fas fa-cut"></i> Basic CapCut editing knowledge</p>
+        <p><i class="fas fa-code"></i> HTML, CSS, JavaScript basics</p>
+        <p><i class="fas fa-rocket"></i> Interested in learning tech & digital skills. Always learning.</p>
+        <p style="margin-top: 10px;"><i class="fas fa-heart" style="color: #ff4d4d;"></i> Passionate about creating and editing</p>
+      </div>
     </section>
 
     <!-- 10th marksheet -->
@@ -415,7 +550,7 @@
       <div class="contact-row">
         <span class="contact-email" id="emailText">ashishbrother9@gmail.com</span>
         <button class="icon-btn" id="copyEmailBtn"><i class="far fa-copy"></i> copy</button>
-        <a href="https://wa.me/917307583147?text=Hi%20ASHISH" target="_blank" class="icon-btn" style="text-decoration:none;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://wa.me/917307583147?text=Hi%20Ashish" target="_blank" class="icon-btn" style="text-decoration:none;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       </div>
       <small style="color: #7aa9c4;">tap copy → clipboard</small>
     </section>
@@ -433,7 +568,7 @@
         setTimeout(() => splash.style.display = 'none', 800);
       }, 2500);
 
-      // ---------- CANVAS PARTICLES (blue, green, red falling) ----------
+      // ---------- CANVAS PARTICLES (7 colors) ----------
       const canvas = document.getElementById('particle-canvas');
       let ctx = canvas.getContext('2d');
       let width, height;
@@ -448,20 +583,20 @@
       window.addEventListener('resize', resizeCanvas);
       resizeCanvas();
 
-      const COLORS = ['#00bfff', '#32ff7e', '#ff4d4d']; // blue, green, red
+      // 7 Rainbow colors
+      const COLORS = ['#8B5CF6', '#4C1F7A', '#00bfff', '#32ff7e', '#FFFF00', '#FFA500', '#ff4d4d'];
 
       function createParticle() {
         return {
           x: Math.random() * width,
-          y: Math.random() * height - height, // start above
-          size: 2 + Math.random() * 8,        // random size
-          speed: 1 + Math.random() * 3,
+          y: Math.random() * height - height,
+          size: 2 + Math.random() * 10,
+          speed: 0.8 + Math.random() * 3,
           color: COLORS[Math.floor(Math.random() * COLORS.length)],
         };
       }
 
-      // init pool
-      for (let i = 0; i < 60; i++) particles.push(createParticle());
+      for (let i = 0; i < 100; i++) particles.push(createParticle());
 
       function drawParticles() {
         ctx.clearRect(0, 0, width, height);
@@ -470,12 +605,11 @@
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
           ctx.fillStyle = p.color;
           ctx.shadowColor = p.color;
-          ctx.shadowBlur = 18;
+          ctx.shadowBlur = 20;
           ctx.fill();
-          // move
           p.y += p.speed;
-          if (p.y > height + 10) {
-            p.y = -10;
+          if (p.y > height + 15) {
+            p.y = -15;
             p.x = Math.random() * width;
           }
         }
@@ -483,13 +617,12 @@
       }
       drawParticles();
 
-      // ---------- INTERSECTION OBSERVER (fade + progress bars fill) ----------
+      // ---------- INTERSECTION OBSERVER ----------
       const sections = document.querySelectorAll('.fade-section');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
-            // if it's skills section, animate progress bars
             if (entry.target.id === 'skills-section') {
               const fills = entry.target.querySelectorAll('.progress-fill');
               fills.forEach(fill => {
@@ -506,7 +639,7 @@
 
       sections.forEach(s => observer.observe(s));
 
-      // ---------- RIPPLE EFFECT ON .SOCIAL-BTN ----------
+      // ---------- RIPPLE EFFECT ----------
       function createRipple(event, btn) {
         const rect = btn.getBoundingClientRect();
         const size = Math.max(rect.width, rect.height);
@@ -538,12 +671,11 @@
         }
       });
 
-      // ---------- PRINT RESUME (download pdf style) ----------
+      // ---------- PRINT RESUME ----------
       document.getElementById('printResumeBtn').addEventListener('click', () => {
         window.print();
       });
 
-      // ensure any hidden progress on first view if already visible
       window.addEventListener('load', () => {
         sections.forEach(s => {
           const rect = s.getBoundingClientRect();
@@ -559,9 +691,8 @@
         });
       });
 
-      // simple fallback for missing image (DP)
       document.querySelectorAll('img').forEach(img => {
-        img.onerror = function() { this.src = 'https://via.placeholder.com/120/0d1b2a/00bfff?text=ASH'; };
+        img.onerror = function() { this.src = 'https://via.placeholder.com/150/0d1b2a/00bfff?text=AS'; };
       });
     })();
   </script>
