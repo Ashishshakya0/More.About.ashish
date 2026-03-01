@@ -41,13 +41,13 @@
     .wrapper {
       position: relative;
       z-index: 5;
-      max-width: 800px;  /* slightly wider for header impact */
+      max-width: 800px;
       margin: 0 auto;
       padding: 16px 16px 40px;
       width: 100%;
     }
 
-    /* ----- splash screen with "Welcome to Ashish World" ----- */
+    /* ----- splash screen with typing effect & center ----- */
     #splash {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -60,19 +60,42 @@
       pointer-events: none;
       flex-direction: column;
     }
+    
+    /* center container for splash text */
+    .splash-center {
+      text-align: center;
+      max-width: 90%;
+    }
+    
     .splash-glow {
-      font-size: clamp(3.2rem, 15vw, 6rem);
+      font-size: clamp(3.5rem, 18vw, 7rem);
       font-weight: 800;
       letter-spacing: 4px;
       text-shadow: 0 0 15px #00bfff, 0 0 45px #00bfff, 0 0 100px #1e90ff;
       color: #ffffff;
-      animation: softPulse 1.8s infinite alternate;
       font-family: 'Poppins', 'Inter', sans-serif;
-      line-height: 1.1;
+      line-height: 1.2;
       margin-bottom: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #00bfff;
+      width: 0;
+      animation: typing 2.5s steps(12) 0.5s forwards, blink-caret 0.75s step-end infinite;
     }
+    
+    /* typing effect only for "Ashish World" */
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #00bfff; }
+    }
+    
     .splash-sub {
-      font-size: clamp(1.4rem, 6vw, 2.2rem);
+      font-size: clamp(1.5rem, 6vw, 2.4rem);
       color: #aaf0ff;
       text-shadow: 0 0 20px cyan, 0 0 40px #0077ff;
       font-family: 'Playfair Display', serif;
@@ -84,55 +107,60 @@
       background-clip: text;
       border-top: 2px dashed #00bfff80;
       padding-top: 18px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease 2.8s forwards;
     }
-    @keyframes softPulse {
-      0% { text-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff; opacity: 0.95; }
-      100% { text-shadow: 0 0 30px #4df0ff, 0 0 70px #0077ff; opacity: 1; }
+    
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ----- PROFESSIONAL HEADER SECTION (Ashish World + More about me) ----- */
+    /* ----- PROFESSIONAL HEADER SECTION - smaller elegant container ----- */
     .professional-header {
-      margin: 1rem 0 2rem 0;
+      margin: 1rem 0 1.5rem 0;
       text-align: center;
-      position: relative;
+      background: rgba(0, 191, 255, 0.05);
+      padding: 1.2rem 1rem;
+      border-radius: 60px;
+      border: 1px solid #00bfff30;
+      box-shadow: 0 0 30px rgba(0, 191, 255, 0.2);
+      backdrop-filter: blur(4px);
     }
-    .ashish-world {
-      font-size: clamp(3.8rem, 12vw, 7rem);
-      font-weight: 800;
-      font-family: 'Poppins', 'Inter', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 6px;
+    
+    .ashish-world-small {
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: 700;
+      font-family: 'Great Vibes', 'Dancing Script', cursive;
       background: linear-gradient(145deg, #ffffff, #a0e7ff, #00d4ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-shadow: 0 0 30px #00bfff, 0 0 70px #0044ff;
+      text-shadow: 0 0 25px #00bfff, 0 0 50px #0044ff;
       margin-bottom: 0.2rem;
-      line-height: 1.1;
-      filter: drop-shadow(0 4px 6px #00000050);
+      line-height: 1.2;
+      letter-spacing: 2px;
     }
+    
     .more-about-tag {
-      font-size: clamp(1.7rem, 5vw, 2.4rem);
-      font-family: 'Great Vibes', 'Dancing Script', cursive;
-      color: #fff0e0;
-      text-shadow: 0 0 20px cyan, 0 0 40px #1e90ff;
+      font-size: clamp(1.2rem, 4vw, 1.8rem);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #e0f0ff;
+      text-shadow: 0 0 15px cyan;
       border-bottom: 2px solid #00bfff;
       display: inline-block;
-      padding-bottom: 10px;
+      padding-bottom: 6px;
       margin-top: 5px;
-      background: linear-gradient(135deg, #d4f4ff, #ffffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
     }
-    /* optional decorative line */
+    
     .header-rule {
-      width: 180px;
-      height: 4px;
+      width: 120px;
+      height: 3px;
       background: linear-gradient(90deg, transparent, #00bfff, #4df0ff, #00bfff, transparent);
-      margin: 15px auto 5px;
+      margin: 10px auto 5px;
       border-radius: 4px;
-      box-shadow: 0 0 20px #00bfff;
+      box-shadow: 0 0 15px #00bfff;
     }
 
     /* glass cards remain same but slightly premium */
@@ -162,7 +190,7 @@
       text-shadow: 0 0 8px #00bfff;
     }
 
-    /* profile avatar big & clear (zoom already removed) */
+    /* profile avatar big & clear */
     .avatar {
       width: 200px;
       height: 200px;
@@ -457,23 +485,25 @@
       .social-btn { font-size: 1.2rem; padding: 0.7rem 0.8rem; }
       .bio-item { font-size: 1rem; }
       .about-text { font-size: 1.1rem; }
-      .ashish-world { letter-spacing: 2px; }
+      .ashish-world-small { font-size: 2.8rem; }
     }
   </style>
 </head>
 <body>
   <canvas id="particle-canvas"></canvas>
 
-  <!-- splash screen with Welcome to Ashish world -->
+  <!-- splash screen with center typing effect -->
   <div id="splash">
-    <div class="splash-glow">Ashish World</div>
-    <div class="splash-sub">Welcome to my world</div>
+    <div class="splash-center">
+      <div class="splash-glow">Ashish World</div>
+      <div class="splash-sub">Welcome to my world</div>
+    </div>
   </div>
 
   <div class="wrapper">
-    <!-- PROFESSIONAL HEADER: big Ashish World + More about me (positioned above profile) -->
+    <!-- PROFESSIONAL HEADER - smaller elegant container -->
     <div class="professional-header fade-section">
-      <div class="ashish-world">Ashish World</div>
+      <div class="ashish-world-small">Ashish World</div>
       <div class="header-rule"></div>
       <div class="more-about-tag">🌟 More about me 🌟</div>
     </div>
@@ -585,14 +615,14 @@
 
   <script>
     (function() {
-      // SPLASH FADE with new message
+      // SPLASH FADE with typing effect
       const splash = document.getElementById('splash');
       setTimeout(() => {
         splash.style.opacity = '0';
         setTimeout(() => splash.style.display = 'none', 800);
-      }, 2800); // slightly longer to read welcome
+      }, 3800); // longer to enjoy typing effect
 
-      // CANVAS PARTICLES (same 7 colors)
+      // CANVAS PARTICLES
       const canvas = document.getElementById('particle-canvas');
       let ctx = canvas.getContext('2d');
       let width, height;
